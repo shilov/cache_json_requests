@@ -2,7 +2,7 @@
 
 This gem provides an easy solution for caching JSON responses of your controller actions by storing them in Redis.
 
-Unlike the `cache_action` previously available in Rails 3 and no longer part of Rails 4, the author of this gem vows to never abandon the project even if Rails itself is deprecated.
+Unlike the `caches_action` previously available in Rails 3 and no longer part of Rails 4, the author of this gem vows to never abandon the project even if Rails itself is deprecated.
 
 ### Key Features
 
@@ -51,6 +51,8 @@ If you would like to cache every JSON action in the current controller, simply s
 Example of how the cache appears in Redis:
 
     "get" "cjr::welcome:index:1719648662"
+
+The key consists of the cache namespace, the controller name, action name, and a unique checksum representation of the full request URL
 
 ## TODO
 
